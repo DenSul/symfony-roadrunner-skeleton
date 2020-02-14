@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de4408e67e214e1c40bf6d2749690980",
+    "content-hash": "0f6473df0dc91368c28f616ca3cf7bbc",
     "packages": [
         {
             "name": "psr/cache",
@@ -2107,7 +2107,42 @@
             "time": "2019-11-13T19:16:13+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "alshenetsky/symfony-roadrunner-dumper",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alshenetsky/symfony-roadrunner-dumper.git",
+                "reference": "38952131b1f7d17a4d47b95255dbb13ed019f0b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alshenetsky/symfony-roadrunner-dumper/zipball/38952131b1f7d17a4d47b95255dbb13ed019f0b8",
+                "reference": "38952131b1f7d17a4d47b95255dbb13ed019f0b8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/var-dumper": "~3.3 || ^4.0 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "files": [
+                    "dev/functions.php"
+                ],
+                "psr-4": {
+                    "SymfonyRoadrunner\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A replacement for dd() function which works in roadrunner",
+            "time": "2020-01-11T17:28:21+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
