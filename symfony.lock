@@ -1,4 +1,7 @@
 {
+    "alshenetsky/symfony-roadrunner-dumper": {
+        "version": "v1.1"
+    },
     "php": {
         "version": "7.3"
     },
