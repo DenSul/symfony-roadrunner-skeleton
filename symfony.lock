@@ -11,8 +11,20 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
+    "psr/http-factory": {
+        "version": "1.0.1"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/log": {
         "version": "1.1.2"
+    },
+    "spiral/goridge": {
+        "version": "v2.2.1"
+    },
+    "spiral/roadrunner": {
+        "version": "v1.6.0"
     },
     "symfony/cache": {
         "version": "v5.0.4"
@@ -107,6 +119,9 @@
     "symfony/polyfill-php73": {
         "version": "v1.14.0"
     },
+    "symfony/psr-http-message-bridge": {
+        "version": "v2.0.0"
+    },
     "symfony/routing": {
         "version": "4.2",
         "recipe": {
@@ -132,5 +147,8 @@
     },
     "symfony/yaml": {
         "version": "v5.0.4"
+    },
+    "zendframework/zend-diactoros": {
+        "version": "2.2.1"
     }
 }
