@@ -37,8 +37,6 @@ jobs:
   test:
       name: Analyze code application and test
       runs-on: ubuntu-latest
-      env:
-        IMAGE_NAME: densul/slave-market:latest
       steps:
         - name: Checkout
           uses: actions/checkout@v1
@@ -49,4 +47,4 @@ jobs:
         - name: Check running containers
           run: docker ps -a
         - name: PHPStan
-          run : docker run "${IMAGE_NAME}" vendor/bin/phpstan analyse --memory-limit=-1 --no-progress /opt/app
+          run : task phpstan-ci
