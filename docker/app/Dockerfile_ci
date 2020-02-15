@@ -90,6 +90,9 @@ RUN set -xe \
     && php -m \
 
 
+RUN ls vendor
+COPY vendor /app/
+
 VOLUME ["/app"]
 CMD ["php-fpm"]
 
