@@ -14,7 +14,9 @@
         "symfony/yaml": "5.0.*"
     },
     "require-dev": {
-        "alshenetsky/symfony-roadrunner-dumper": "^1.0"
+        "alshenetsky/symfony-roadrunner-dumper": "^1.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "^0.12.10"
     },
     "config": {
         "preferred-install": {
