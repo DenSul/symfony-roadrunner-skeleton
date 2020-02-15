@@ -72,13 +72,18 @@ RUN set -xe \
 COPY ./docker/app/etc/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/app/etc/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
-
 WORKDIR /app
 
 COPY ./composer.* /app/
-RUN composer install --no-interaction --no-ansi
+
+#RUN set -xe \
+#    && composer install --no-interaction --no-ansi \
+    #&& composer install --no-dev --no-interaction --no-ansi --no-suggest --prefer-dist  --no-autoloader --no-scripts \
+#    && chmod -R 777 /home/user ${COMPOSER_HOME}
 
 COPY . /app
+
+
 
 VOLUME ["/app"]
 CMD ["php-fpm"]

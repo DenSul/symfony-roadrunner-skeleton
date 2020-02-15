@@ -46,5 +46,7 @@ jobs:
           run: docker-compose -f docker-compose.ci.yml up -d
         - name: Check running containers
           run: docker ps -a
+        - name: Composer install
+          run: task composer-install-ci
         - name: PHPStan
           run : task phpstan-ci
