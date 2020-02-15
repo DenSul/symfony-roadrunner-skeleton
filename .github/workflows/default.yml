@@ -49,4 +49,4 @@ jobs:
         - name: Check running containers
           run: docker ps -a
         - name: PHPStan
-          run : task phpstan
+          run : docker run "${IMAGE_NAME}" vendor/bin/phpstan analyse --memory-limit=-1 --no-progress /opt/app
