@@ -46,5 +46,9 @@ jobs:
           uses: Arduino/actions/setup-taskfile@master
         - name: Build
           run: docker-compose -f docker-compose.ci.yml up -d
+        - name: Check running containers
+          run: docker ps -a
+        - name: Check logs
+          run: docker logs app
         - name: PHPStan
           run : task phpstan
