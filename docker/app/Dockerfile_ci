@@ -85,7 +85,7 @@ COPY . /app
 
 RUN set -xe composer --version \
     && php -v \
-    && php -m \
+    && php -m
 
 
 RUN ls ./
