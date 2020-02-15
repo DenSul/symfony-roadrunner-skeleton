@@ -16,3 +16,8 @@ rr
 ###> idea files ###
 .idea
 ###< idea files ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###

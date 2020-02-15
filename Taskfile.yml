@@ -1,0 +1,32 @@
+---
+version: '2'
+
+tasks:
+    check-code-style:
+        desc: "Fix code style"
+        cmds:
+            - docker run --rm -iv $PWD:/data/ cytopia/php-cs-fixer fix --dry-run --diff
+
+    lint:
+        desc: "Quick tests not required to build app"
+        cmds:
+            - task: check-composer
+            - task: lint-mnd
+            - task: check-code-style
+
+    check-composer:
+        desc: "Validate composer configuration"
+        cmds:
+            - docker run --rm -v $PWD:/app composer:1.9 validate --no-check-publish
+
+    check-magic-numbers:
+        desc: "Validate no magic numbers"
+        cmds:
+            - docker run --rm -v $PWD:/app dockerizedphp/phpmnd /app
+                --exclude=var --exclude=vendor
+                --non-zero-exit-on-violation
+
+    phpstan:
+        desc: "PHPStan. Run locally after deploy"
+        cmds:
+            - dev-compose exec -uwww-data php-fpm vendor/bin/phpstan analyse --memory-limit=-1 /opt/app
