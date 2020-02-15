@@ -76,22 +76,11 @@ COPY ./docker/app/etc/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 WORKDIR /app
 
 COPY ./composer.* /app/
-
-RUN set -xe composer install --no-interaction --no-ansi \
-    && chmod -R 777 /home/user ${COMPOSER_HOME}
-
+RUN composer install --no-interaction --no-ansi
 
 COPY . /app
-
-RUN set -xe composer --version \
-    && php -v \
-    && php -m
-
-
-RUN ls ./
 
 VOLUME ["/app"]
 CMD ["php-fpm"]
 
 EXPOSE 9001
-
