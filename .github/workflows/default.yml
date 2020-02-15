@@ -35,7 +35,7 @@ jobs:
             run: task check-magic-numbers
 
   test:
-      name: Analyze code application and test
+      name: Build application. Run analyze code and test
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
