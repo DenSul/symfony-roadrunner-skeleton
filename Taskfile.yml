@@ -35,5 +35,6 @@ tasks:
     phpstan-ci:
             desc: "PHPStan. Run in CI"
             cmds:
-                - docker-compose -f docker-compose.ci.yml exec -T -uwww-data app /app/vendor/bin/phpstan analyse --memory-limit=-1 /app
+                - docker-compose -f docker-compose.ci.yml exec -T -uwww-data app ls
+                - docker-compose -f docker-compose.ci.yml exec -T -uwww-data app ./vendor/bin/phpstan analyse --memory-limit=-1 /app
 
