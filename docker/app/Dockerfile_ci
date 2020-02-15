@@ -84,14 +84,12 @@ RUN set -xe \
 
 COPY . /app
 
-RUN set -xe \
-    && composer --version \
+RUN set -xe composer --version \
     && php -v \
     && php -m \
 
 
-RUN ls vendor
-COPY vendor /app/
+RUN ls
 
 VOLUME ["/app"]
 CMD ["php-fpm"]
