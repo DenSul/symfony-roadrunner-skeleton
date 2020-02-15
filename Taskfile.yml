@@ -29,4 +29,4 @@ tasks:
     phpstan:
         desc: "PHPStan. Run locally after deploy"
         cmds:
-            - docker-compose exec -uwww-data app vendor/bin/phpstan analyse --memory-limit=-1 /app
+            - docker-compose -f docker-compose.ci.yml exec -uwww-data app vendor/bin/phpstan analyse --memory-limit=-1 /app
