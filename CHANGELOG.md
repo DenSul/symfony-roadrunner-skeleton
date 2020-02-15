@@ -9,6 +9,7 @@
   - magic numbers check
   - phpstan
   - task file and binary task file
+  - added `[SKIP CI]` in commit message
 - added docker build for dev
 - added support `Spiral/Roadrunner`
 - added basic .rr.yaml config
