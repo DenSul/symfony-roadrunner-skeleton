@@ -36,7 +36,7 @@ jobs:
 
   test:
       name: Analyze code application and test
-      run-on: ubuntu-latest
+      runs-on: ubuntu-latest
       env:
         IMAGE_NAME: densul/slave-market:latest
       steps:
