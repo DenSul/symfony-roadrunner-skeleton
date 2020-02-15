@@ -88,9 +88,7 @@ RUN set -xe \
 #RUN vendor/bin/rr get-binary
 
 COPY --from=roadrunner /usr/bin/rr /usr/bin/rr
-
 COPY . /app
-
 
 RUN set -xe \
     && composer --version \
