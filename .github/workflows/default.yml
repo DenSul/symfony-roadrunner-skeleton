@@ -1,16 +1,16 @@
 name: default
 on: [push]
 jobs:
-      php-cs-fixer:
-          name: Validate code style
-          runs-on: ubuntu-latest
-          steps:
-              - name: Checkout
-                uses: actions/checkout@v1
-              - name: Install Task
-                run: curl -sL https://taskfile.dev/install.sh | sh
-              - name: check codestyle
-                run: task check-code-style
+  php-cs-fixer:
+      name: Validate code style
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v1
+          - name: Install Task
+            run: curl -sL https://taskfile.dev/install.sh | sh
+          - name: check codestyle
+            run: task check-code-style
   composer-validate:
     name: Validate composer configuration
     runs-on: ubuntu-latest

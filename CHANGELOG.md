@@ -3,6 +3,13 @@
 ## Unreleased
 
 ### Added
+- added github-action workflow and checklist
+  - code style check
+  - composer check
+  - magic numbers check
+  - phpstan
+  - task file and binary task file
+- added docker build for dev
 - added support `Spiral/Roadrunner`
 - added basic .rr.yaml config
 - added example `worker.php`
