@@ -1,5 +1,5 @@
 FROM composer:1.9.3 AS composer
-FROM php:7.3.2-alpine
+FROM php:7.3.2-fpm-alpine
 
 #https://gitlab.com/tarampampam/laravel-in-docker-with-rr/-/merge_requests/1/diffs#3f3f9346ec5a00675fd16cefd42e02fddc0520b4
 
@@ -91,4 +91,7 @@ RUN set -xe \
 
 
 VOLUME ["/app"]
+CMD ["php-fpm"]
+
+EXPOSE 9001
 
