@@ -27,7 +27,13 @@ tasks:
                 --non-zero-exit-on-violation
 
     phpstan:
-        desc: "PHPStan. Run locally after deploy"
-        cmds:
-            - docker-compose -f docker-compose.dev.yml exec -T -uwww-data app /app/vendor/bin/phpstan analyse --memory-limit=-1 /app
+            desc: "PHPStan. Run locally"
+            cmds:
+                - docker-compose -f docker-compose.dev.yml exec -T -uwww-data app /app/vendor/bin/phpstan analyse --memory-limit=-1 /app
+
+
+    phpstan-ci:
+            desc: "PHPStan. Run in CI"
+            cmds:
+                - docker-compose -f docker-compose.ci.yml exec -T -uwww-data app /app/vendor/bin/phpstan analyse --memory-limit=-1 /app
 
