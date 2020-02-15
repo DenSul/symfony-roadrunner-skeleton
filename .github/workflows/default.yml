@@ -37,6 +37,8 @@ jobs:
   test:
       name: Analyze code application and test
       runs-on: ubuntu-latest
+      env:
+        COMPOSE_INTERACTIVE_NO_CLI: 1
       steps:
         - name: Checkout
           uses: actions/checkout@v1
@@ -47,4 +49,4 @@ jobs:
         - name: Check running containers
           run: docker ps -a
         - name: PHPStan
-          run : task phpstan-ci
+          run : task phpstan
