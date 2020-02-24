@@ -8,4 +8,4 @@ var
 .gitlab
 .idea
 .git
-*.local.yml
+#*.local.yml
