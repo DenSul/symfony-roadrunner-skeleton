@@ -1,5 +1,7 @@
 # Symfony 5 + Roadrunner skeleton
 
+![build](https://github.com/DenSul/symfony-roadrunner-skeleton/workflows/build/badge.svg?branch=master)
+
 It's my skeleton project.
 
 ## Includes:
