@@ -72,7 +72,7 @@ RUN set -xe \
 
 COPY ./docker/app/etc/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/app/etc/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
-
+COPY --from=roadrunner /usr/bin/rr /usr/bin/rr
 
 WORKDIR /app
 
@@ -83,12 +83,9 @@ RUN set -xe \
     #&& composer install --no-dev --no-interaction --no-ansi --no-suggest --prefer-dist  --no-autoloader --no-scripts \
     && chmod -R 777 /home/user ${COMPOSER_HOME}
 
-
-# get binary rr
-#RUN vendor/bin/rr get-binary
-
-COPY --from=roadrunner /usr/bin/rr /usr/bin/rr
 COPY . /app
+
+VOLUME ["/app"]
 
 RUN set -xe \
     && composer --version \
@@ -98,7 +95,7 @@ RUN set -xe \
 
 EXPOSE 80
 EXPOSE 443
-VOLUME ["/app"]
+
 
 # DO NOT OVERRIDE ENTRYPOINT IF YOU CAN AVOID IT! @see <https://github.com/docker/docker.github.io/issues/6142>
 #ENTRYPOINT ["/app-entrypoint.sh"]
